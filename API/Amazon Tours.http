@@ -1,0 +1,6 @@
+@Amazon_Tours_HostAddress = http://localhost:5055
+
+GET {{Amazon_Tours_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
