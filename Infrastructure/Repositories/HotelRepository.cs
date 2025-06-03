@@ -12,6 +12,6 @@ namespace AmazonTours.Infrastructure.Repositories
 {
     public class HotelRepository : BaseRepository<Hotel>, IHotelRepository
     {
-        public HotelRepository(AmazonToursDBContext context) : base(context) { }
+        public HotelRepository(EInvocingDBContext context) : base(context) { }
     }
 }

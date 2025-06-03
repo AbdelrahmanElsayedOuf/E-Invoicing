@@ -14,5 +14,7 @@ namespace AmazonTours.Application.Interfaces.Identity
     public interface IUserService
     {
         Task<RegisterResponse> Register(CreateUserDTO userDTO);
+        Task<BoolWithListOfMessges> ConfirmEmail(string userId, string token);
+
     }
 }

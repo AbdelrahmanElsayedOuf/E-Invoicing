@@ -13,7 +13,7 @@ namespace AmazonTours.Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly AmazonToursDBContext _context;
+        private readonly EInvocingDBContext _context;
         
         private CityRepository cityRepository;
         private ClientRepository clientRepository;
@@ -24,7 +24,7 @@ namespace AmazonTours.Infrastructure.UnitOfWork
         private TripRepository tripRepository;
         private ReceiptVoucherRepository receiptVoucherRepository;
         
-        public UnitOfWork(AmazonToursDBContext context)
+        public UnitOfWork(EInvocingDBContext context)
         {
             _context = context;
         }

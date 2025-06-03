@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AmazonTours.Infrastructure.Migrations
+namespace EInvoicing.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class addidentitytables : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

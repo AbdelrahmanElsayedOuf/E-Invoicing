@@ -12,6 +12,6 @@ namespace AmazonTours.Infrastructure.Repositories
 {
     public class ClientRepository : BaseRepository<Client>, IClientRepository
     {
-        public ClientRepository(AmazonToursDBContext context) : base(context) { }
+        public ClientRepository(EInvocingDBContext context) : base(context) { }
     }
 }

@@ -12,6 +12,6 @@ namespace AmazonTours.Infrastructure.Repositories
 {
     public class CityRepository : BaseRepository<City>, ICityRepository
     {
-        public CityRepository(AmazonToursDBContext context) : base(context) { }
+        public CityRepository(EInvocingDBContext context) : base(context) { }
     }
 }

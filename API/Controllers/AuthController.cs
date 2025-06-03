@@ -46,5 +46,17 @@ namespace Amazon_Tours.Controllers
                 return BadRequest(ApiResponseFactory<RegisterResponse>.FailureResponse(registerResponse.Messages));
             }
         }
+
+
+        [HttpGet("ConfirmEmail")]
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            var confirmEmailResponse = await _userService.ConfirmEmail(userId, token);
+            if (confirmEmailResponse.IsSuccess)
+            {
+                return Ok(ApiResponseFactory<BoolWithListOfMessges>.SuccessResponse(confirmEmailResponse));
+            }
+            return BadRequest((ApiResponseFactory<BoolWithListOfMessges>.FailureResponse(confirmEmailResponse.Messages)));
+        }
     }
 }

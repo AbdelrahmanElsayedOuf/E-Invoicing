@@ -12,6 +12,6 @@ namespace AmazonTours.Infrastructure.Repositories
 {
     public class CountryRepository : BaseRepository<Country>, ICountryRepository
     {
-        public CountryRepository(AmazonToursDBContext context) : base(context) { }
+        public CountryRepository(EInvocingDBContext context) : base(context) { }
     }
 }

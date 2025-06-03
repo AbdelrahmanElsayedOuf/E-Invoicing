@@ -12,6 +12,6 @@ namespace AmazonTours.Infrastructure.Repositories
 {
     public class InquiryRepository : BaseRepository<Inquiry>, IInquiryRepository
     {
-        public InquiryRepository(AmazonToursDBContext context) : base(context) { }
+        public InquiryRepository(EInvocingDBContext context) : base(context) { }
     }
 }

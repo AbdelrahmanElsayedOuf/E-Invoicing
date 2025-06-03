@@ -4,6 +4,7 @@ using AmazonTours.Application.Interfaces.Identity;
 using AmazonTours.Application.Utilities.HelperClasses;
 using FluentEmail.Core;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,13 @@ namespace AmazonTours.Application.Services
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IFluentEmail _fluentEmail;
+        private readonly IConfiguration _configurationManager;
 
-        public UserService(UserManager<IdentityUser> userManager, IFluentEmail fluentEmail)
+        public UserService(UserManager<IdentityUser> userManager, IFluentEmail fluentEmail, IConfiguration configurationManager)
         {
             _userManager = userManager;
             _fluentEmail = fluentEmail;
+            _configurationManager = configurationManager;
         }
 
         public async Task<RegisterResponse> Register(CreateUserDTO userDTO)
@@ -52,8 +55,8 @@ namespace AmazonTours.Application.Services
                     // Generate email confirmation token
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
-                    // Create confirmation link (replace "your-app-url" with your actual app URL)
-                    var confirmationLink = $"https://your-app-url/confirm-email?userId={user.Id}&token={Uri.EscapeDataString(token)}";
+                    var baseUrl = _configurationManager["AppSettings:ConfirmationLinkBaseUrl"];
+                    var confirmationLink = $"{baseUrl}?userId={user.Id}&token={Uri.EscapeDataString(token)}";
 
                     // TODO: Send the confirmation link via email (integrate an email service)
                     await _fluentEmail

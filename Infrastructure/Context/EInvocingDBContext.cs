@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Context
 {
-    public class AmazonToursDBContext : IdentityDbContext
+    public class EInvocingDBContext : IdentityDbContext
     {
-        public AmazonToursDBContext(DbContextOptions<AmazonToursDBContext> options) : base(options)
+        public EInvocingDBContext(DbContextOptions<EInvocingDBContext> options) : base(options)
         {
             
         }
@@ -29,14 +29,5 @@ namespace Infrastructure.Context
 
             base.OnModelCreating(builder);
         }
-
-        public virtual DbSet<Client> Clients { get; set; }
-        public virtual DbSet<Inquiry> Inquiries { get; set; }
-        public virtual DbSet<Hotel> Hotels { get; set; }
-        public virtual DbSet<Reservation> Reservations { get; set; }
-        public virtual DbSet<City> Cities { get; set; }
-        public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<Trip> Trips { get; set; }
-        public virtual DbSet<RecieptVoucher> RecieptVoucher { get; set; }
     }
 }

@@ -13,6 +13,6 @@ namespace AmazonTours.Infrastructure.Repositories
 {
     public class ReceiptVoucherRepository : BaseRepository<RecieptVoucher>, IRecieptVoucherRepository
     {
-        public ReceiptVoucherRepository(AmazonToursDBContext context) : base(context) { }
+        public ReceiptVoucherRepository(EInvocingDBContext context) : base(context) { }
     }
 }

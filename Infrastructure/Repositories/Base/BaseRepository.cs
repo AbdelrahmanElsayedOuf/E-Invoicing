@@ -16,10 +16,10 @@ namespace Infrastructure.Repositories.Base
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity, new()
     {
-        private readonly AmazonToursDBContext _context;
+        private readonly EInvocingDBContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public BaseRepository(AmazonToursDBContext context)
+        public BaseRepository(EInvocingDBContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();

@@ -12,6 +12,6 @@ namespace AmazonTours.Infrastructure.Repositories
 {
     public class ReservatonRepository : BaseRepository<Reservation>, IReservationRepository
     {
-        public ReservatonRepository(AmazonToursDBContext context) : base(context) { }
+        public ReservatonRepository(EInvocingDBContext context) : base(context) { }
     }
 }

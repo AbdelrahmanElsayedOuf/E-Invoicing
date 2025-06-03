@@ -25,27 +25,31 @@ namespace Amazon_Tours.Controllers
             _baseService = baseService;
         }
 
+        [NonAction]
         public IActionResult OkResponse<T>(T data, string message = null)
         {
             return Ok(ApiResponseFactory<T>.SuccessResponse(data, message));
         }
 
+        [NonAction]
         public IActionResult BadRequestResponse(IEnumerable<string> messages)
         {
             return BadRequest(ApiResponseFactory<T>.FailureResponse(messages));
         }
 
+        [NonAction]
         public IActionResult NotFoundResponse(string message = null)
         {
             return NotFound(ApiResponseFactory<T>.NotFoundResponse(message));
         }
 
+        [NonAction]
         public IActionResult ErrorResponse(IEnumerable<string> messages)
         {
             return StatusCode(500, ApiResponseFactory<T>.ErrorResponse(messages));
         }
 
-
+        [NonAction]
         protected async Task<EntityExistence> CheckExistedId(Guid id)
         {
             var entity = await _baseService.GetByIdAsync(id);
@@ -56,6 +60,7 @@ namespace Amazon_Tours.Controllers
             };
         }
 
+        [NonAction]
         protected IActionResult InValidModelState()
         {
             var errorList = ModelState.Values
