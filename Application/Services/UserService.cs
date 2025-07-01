@@ -27,7 +27,7 @@ namespace E_Invoicing.Application.Services
         public UserService(UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IJwtService jwtService,
-            IFluentEmail fluentEmail, 
+            IFluentEmail fluentEmail,
             IConfiguration configurationManager)
         {
             _userManager = userManager;
@@ -47,7 +47,7 @@ namespace E_Invoicing.Application.Services
                 if (existingUser != null)
                 {
                     registerResponse.IsEmailConfirmed = existingUser.EmailConfirmed;
-                    registerResponse.Messages = new List<string>() { "Email is already registered before." } ;
+                    registerResponse.Messages = new List<string>() { "Email is already registered before." };
                     return registerResponse;
                 }
 
@@ -229,7 +229,7 @@ namespace E_Invoicing.Application.Services
                 if (existedRole != null)
                 {
                     response.IsSuccess = false;
-                    ((List<string>)response.Messages).Add("Role already exists.");
+                    (response.Messages).Add("Role already exists.");
                     return response;
                 }
 
@@ -237,7 +237,7 @@ namespace E_Invoicing.Application.Services
                 if (addRoleResult.Succeeded)
                 {
                     response.IsSuccess = true;
-                    ((List<string>)response.Messages).Add("Role added successfully.");
+                    (response.Messages).Add("Role added successfully.");
                 }
                 else
                 {
@@ -248,11 +248,123 @@ namespace E_Invoicing.Application.Services
             catch (Exception ex)
             {
                 response.IsSuccess = false;
-                ((List<string>)response.Messages).Add("An unexpected error occurred while adding the role. " + ex.Message);
+                (response.Messages).Add("An unexpected error occurred while adding the role. " + ex.Message);
             }
 
             return response;
         }
 
+
+        public async Task<BoolWithListOfMessges> ForgetPassword(string email)
+        {
+            
+            var response = new BoolWithListOfMessges
+            {
+                Messages = new List<string>()
+            };
+
+            try
+            {
+                if (string.IsNullOrEmpty(email))
+                {
+                    response.IsSuccess = false;
+                    response.Messages.Add("Email cannot be empty.");
+                    return response;
+                }
+
+
+                var user = await _userManager.FindByEmailAsync(email);
+                if (user == null)
+                {
+                    response.IsSuccess = false;
+                    response.Messages.Add("User not found.");
+                    return response;
+                }
+
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var baseUrl = _configurationManager["AppSettings:ResetPasswordBaseUrl"];
+                var confirmationLink = $"{baseUrl}?userId={user.Id}&token={Uri.EscapeDataString(token)}";
+
+                string emailBody = $@"
+<html>
+<head>
+  <style>
+    .button {{
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      border-radius: 6px;
+    }}
+  </style>
+</head>
+<body>
+  <p>Hello {System.Net.WebUtility.HtmlEncode(user.UserName)},</p>
+  <p>Please confirm your resetting password process by clicking the button below:</p>
+  <a href=""{confirmationLink}"" class=""button"">Go to reset password</a>
+  <p>If you did not request this, please ignore this email.</p>
+</body>
+</html>
+";
+
+                await _fluentEmail
+                    .To(user.Email)
+                    .Subject("Reset password")
+                    .Body(emailBody, isHtml: true)
+                    .SendAsync();
+
+                response.IsSuccess = true;
+                response.Messages.Add("Password reset email sent successfully. Please check your email.");
+                return response;
+            }
+            catch (Exception)
+            {
+                response.IsSuccess = false;
+                response.Messages.Add("An unexpected error occurred while processing the password reset request.");
+                return response;
+            }
+        }
+    
+        public async Task<BoolWithListOfMessges> ResetPassword(ResetPasswordDTO resetPasswordDTO)
+        {
+            var response = new BoolWithListOfMessges
+            {
+                Messages = new List<string>()
+            };
+            try
+            {
+                var user = await _userManager.FindByIdAsync(resetPasswordDTO.UserId);
+                if (user == null)
+                {
+                    response.IsSuccess = false;
+                    response.Messages.Add("User not found.");
+                    return response;
+                }
+
+                var resetResult = await _userManager.ResetPasswordAsync(user, resetPasswordDTO.Token, resetPasswordDTO.Password);
+                if (resetResult.Succeeded)
+                {
+                    response.IsSuccess = true;
+                    response.Messages.Add("Password reset successfully.");
+                }
+                else
+                {
+                    response.IsSuccess = false;
+                    response.Messages.AddRange(resetResult.Errors.Select(e => e.Description));
+                }
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccess = false;
+                response.Messages.Add("An unexpected error occurred while resetting the password: " + ex.Message);
+            }
+            return response;
+        }
     }
 }

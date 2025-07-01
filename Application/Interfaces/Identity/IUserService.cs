@@ -18,5 +18,7 @@ namespace E_Invoicing.Application.Interfaces.Identity
         Task<BoolWithListOfMessges> ConfirmEmail(string userId, string token);
         Task<LoginResponseDTO> Login(LoginDTO loginDTO);
         Task<BoolWithListOfMessges> AddSystemRole(AddNewRoleDTO addSystemRoleDTO);
+        Task<BoolWithListOfMessges> ForgetPassword(string email);
+        Task<BoolWithListOfMessges> ResetPassword(ResetPasswordDTO resetPasswordDTO);
     }
 }

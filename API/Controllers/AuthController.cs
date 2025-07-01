@@ -27,7 +27,6 @@ namespace Amazon_Tours.Controllers
             _userService = userService;
         }
 
-        [Authorize]
         [HttpPost("Register")]
         public async Task<IActionResult> Register(CreateUserDTO userDTO)
         {
@@ -97,6 +96,41 @@ namespace Amazon_Tours.Controllers
             else
             {
                 return BadRequest(ApiResponseFactory<IEnumerable<string>>.FailureResponse(response.Messages));
+            }
+        }
+
+        [HttpGet("ForgetPassword")]
+        public async Task<IActionResult> ForgetPassword(string email)
+        {
+            var result = await _userService.ForgetPassword(email);
+            if (result.IsSuccess)
+            {
+                return Ok(ApiResponseFactory<BoolWithListOfMessges>.SuccessResponse(result));
+            }
+            else
+            {
+                return BadRequest(ApiResponseFactory<string>.FailureResponse(result.Messages));
+            }
+        }
+
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDTO resetPasswordDTO)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errorList = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage);
+                return BadRequest(ApiResponseFactory<IEnumerable<string>>.FailureResponse(errorList));
+            }
+            var result = await _userService.ResetPassword(resetPasswordDTO);
+            if (result.IsSuccess)
+            {
+                return Ok(ApiResponseFactory<BoolWithListOfMessges>.SuccessResponse(result));
+            }
+            else
+            {
+                return BadRequest(ApiResponseFactory<BoolWithListOfMessges>.FailureResponse(result.Messages));
             }
         }
     }
