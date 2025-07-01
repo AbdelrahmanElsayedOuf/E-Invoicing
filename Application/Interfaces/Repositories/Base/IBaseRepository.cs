@@ -1,4 +1,4 @@
-﻿using AmazonTours.Application.Utilities.HelperClasses;
+﻿using E_Invoicing.Application.Utilities.HelperClasses;
 using Models.Interfaces;
 using System;
 using System.Collections.Generic;

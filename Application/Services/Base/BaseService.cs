@@ -1,6 +1,6 @@
-﻿using AmazonTours.Application.Interfaces.Services.Base;
-using AmazonTours.Application.Interfaces.UnitOfWork;
-using AmazonTours.Application.Utilities.HelperClasses;
+﻿using E_Invoicing.Application.Interfaces.Services.Base;
+using E_Invoicing.Application.Interfaces.UnitOfWork;
+using E_Invoicing.Application.Utilities.HelperClasses;
 using Application.Interfaces.Repositories.Base;
 using Models.Interfaces;
 using System;
@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.Services.Base
+namespace E_Invoicing.Application.Services.Base
 {
     public class BaseService<T> : IBaseService<T> where T : class, IEntity, new()
     {

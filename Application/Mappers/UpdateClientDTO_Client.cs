@@ -1,5 +1,5 @@
-﻿using AmazonTours.Application.DTOs.CreateDTOs;
-using AmazonTours.Application.DTOs.UpdateDTOs;
+﻿using E_Invoicing.Application.DTOs.CreateDTOs;
+using E_Invoicing.Application.DTOs.UpdateDTOs;
 using AutoMapper;
 using Models;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.Mappers
+namespace E_Invoicing.Application.Mappers
 {
     public class UpdateClientDTO_Client : Profile
     {

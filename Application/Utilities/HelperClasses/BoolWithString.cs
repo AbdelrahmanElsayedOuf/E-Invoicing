@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.Utilities.HelperClasses
+namespace E_Invoicing.Application.Utilities.HelperClasses
 {
     public class BoolWithSingleMessge
     {

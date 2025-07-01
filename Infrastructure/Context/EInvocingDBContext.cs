@@ -1,4 +1,4 @@
-﻿using AmazonTours.Domain;
+﻿using E_Invoicing.Domain;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Models;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.DTOs.ReadDTOs
+namespace E_Invoicing.Application.DTOs.ReadDTOs
 {
     public class ClientDTO
     {

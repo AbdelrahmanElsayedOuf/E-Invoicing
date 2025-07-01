@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Domain.Enums
+namespace E_Invoicing.Domain.Enums
 {
     public enum TransportationType
     {

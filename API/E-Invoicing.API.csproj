@@ -5,11 +5,13 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
-    <RootNamespace>E-Invoicing</RootNamespace>
+    <RootNamespace>E_Invoicing</RootNamespace>
+    <UserSecretsId>1eeb48ef-7021-4588-9bfc-f902477eca3a</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
@@ -20,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Application\E-Invoicing.Application.csproj" />
     <ProjectReference Include="..\Infrastructure\E-Invoicing.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿using AmazonTours.Domain;
+﻿using E_Invoicing.Domain;
 using Application.Interfaces.Repositories;
 using Infrastructure.Context;
 using Infrastructure.Repositories.Base;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Infrastructure.Repositories
+namespace E_Invoicing.Infrastructure.Repositories
 {
     public class ReceiptVoucherRepository : BaseRepository<RecieptVoucher>, IRecieptVoucherRepository
     {

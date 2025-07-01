@@ -1,4 +1,4 @@
-﻿using AmazonTours.Application.DTOs.Interfaces;
+﻿using E_Invoicing.Application.DTOs.Interfaces;
 using AutoMapper;
 using Models.Interfaces;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.Utilities.Extensions
+namespace E_Invoicing.Application.Utilities.Extensions
 {
     public static class DTOExtension
     {

@@ -1,4 +1,4 @@
-﻿using AmazonTours.Application.DTOs.Interfaces;
+﻿using E_Invoicing.Application.DTOs.Interfaces;
 using Models.Enums;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.DTOs.UpdateDTOs
+namespace E_Invoicing.Application.DTOs.UpdateDTOs
 {
     public class UpdateClientDTO : IDTO
     {

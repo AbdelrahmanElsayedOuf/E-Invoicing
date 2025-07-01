@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.DTOs.Interfaces
+namespace E_Invoicing.Application.DTOs.Interfaces
 {
     public interface IDTO
     {

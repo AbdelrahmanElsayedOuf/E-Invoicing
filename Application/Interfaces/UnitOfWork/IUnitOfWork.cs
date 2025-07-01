@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.Interfaces.UnitOfWork
+namespace E_Invoicing.Application.Interfaces.UnitOfWork
 {
     public interface IUnitOfWork
     {

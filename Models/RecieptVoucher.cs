@@ -1,4 +1,4 @@
-﻿using AmazonTours.Domain.Enums;
+﻿using E_Invoicing.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 using Models;
 using Models.Enums;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Domain
+namespace E_Invoicing.Domain
 {
     public class RecieptVoucher : IEntity
     {

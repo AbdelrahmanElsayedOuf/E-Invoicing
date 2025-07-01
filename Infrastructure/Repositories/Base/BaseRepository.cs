@@ -1,4 +1,4 @@
-﻿using AmazonTours.Application.Utilities.HelperClasses;
+﻿using E_Invoicing.Application.Utilities.HelperClasses;
 using Application.Interfaces.Repositories.Base;
 using Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;

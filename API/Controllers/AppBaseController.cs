@@ -1,6 +1,6 @@
 ﻿using Amazon_Tours.Utilities.ApiResponses.Factory;
 using Amazon_Tours.Utilities.HelperClasses;
-using AmazonTours.Application.Interfaces.Services.Base;
+using E_Invoicing.Application.Interfaces.Services.Base;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

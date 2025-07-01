@@ -1,5 +1,5 @@
-﻿using AmazonTours.Application.DTOs.ReadDTOs;
-using AmazonTours.Domain;
+﻿using E_Invoicing.Application.DTOs.ReadDTOs;
+using E_Invoicing.Domain;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.Mappers
+namespace E_Invoicing.Application.Mappers
 {
     public class RecieptVoucher_RecieptVoucherDTO : Profile
     {

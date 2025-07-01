@@ -1,4 +1,4 @@
-﻿using AmazonTours.Domain.Enums;
+﻿using E_Invoicing.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 using Models;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.DTOs.ReadDTOs
+namespace E_Invoicing.Application.DTOs.ReadDTOs
 {
     public class RecieptVoucherDTO
     {

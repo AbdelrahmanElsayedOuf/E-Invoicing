@@ -1,4 +1,4 @@
-﻿using AmazonTours.Domain.Enums;
+﻿using E_Invoicing.Domain.Enums;
 using Models.Enums;
 using Models.Interfaces;
 using System;

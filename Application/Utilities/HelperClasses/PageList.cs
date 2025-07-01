@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace AmazonTours.Application.Utilities.HelperClasses
+namespace E_Invoicing.Application.Utilities.HelperClasses
 {
 
 

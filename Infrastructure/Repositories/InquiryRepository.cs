@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Infrastructure.Repositories
+namespace E_Invoicing.Infrastructure.Repositories
 {
     public class InquiryRepository : BaseRepository<Inquiry>, IInquiryRepository
     {

@@ -1,5 +1,5 @@
-﻿using AmazonTours.Application.Interfaces.UnitOfWork;
-using AmazonTours.Infrastructure.Repositories;
+﻿using E_Invoicing.Application.Interfaces.UnitOfWork;
+using E_Invoicing.Infrastructure.Repositories;
 using Application.Interfaces.Repositories;
 using Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Infrastructure.UnitOfWork
+namespace E_Invoicing.Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {

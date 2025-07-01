@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AmazonTours.Application.DTOs.CreateDTOs
+namespace E_Invoicing.Application.DTOs.CreateDTOs
 {
     public class CreateUserDTO
     {

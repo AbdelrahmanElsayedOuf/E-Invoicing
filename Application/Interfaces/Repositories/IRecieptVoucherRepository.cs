@@ -1,4 +1,4 @@
-﻿using AmazonTours.Domain;
+﻿using E_Invoicing.Domain;
 using Application.Interfaces.Repositories.Base;
 using Models;
 using System;

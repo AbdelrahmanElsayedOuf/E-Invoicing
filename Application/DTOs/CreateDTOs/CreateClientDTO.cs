@@ -7,9 +7,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AmazonTours.Application.DTOs.Interfaces;
+using E_Invoicing.Application.DTOs.Interfaces;
 
-namespace AmazonTours.Application.DTOs.CreateDTOs
+namespace E_Invoicing.Application.DTOs.CreateDTOs
 {
     public class CreateClientDTO : IDTO
     {

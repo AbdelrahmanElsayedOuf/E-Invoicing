@@ -1,7 +1,7 @@
 ﻿using Amazon_Tours.Utilities.ApiResponses.Factory;
 using Amazon_Tours.Utilities.ApiResponses.Interfaces;
-using AmazonTours.Application.DTOs.ReadDTOs;
-using AmazonTours.Application.Interfaces.Services;
+using E_Invoicing.Application.DTOs.ReadDTOs;
+using E_Invoicing.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;

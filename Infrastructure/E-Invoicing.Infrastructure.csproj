@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<InvariantGlobalization>false</InvariantGlobalization>
+	<AssemblyName>E_Invoicing.Infrastructure</AssemblyName>
+	<RootNamespace>E_Invoicing.Application</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
